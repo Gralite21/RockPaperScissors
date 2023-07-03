@@ -22,15 +22,22 @@
     score.Wins = 0 ;
     score.Losses = 0 ;
     score.Ties = 0 ;
-    alert('Score has been reset')
+    localStorage.removeItem('score');
+    alert('Score has been reset');
   ">Reset Score</button>
 
 <script>
-  const score = {
-    Wins: 0,
+  let score =
+    JSON.parse(localStorage.getItem('score'));
+  if (score===null){
+    score= {
+    Wins : 0,
     Losses: 0,
     Ties: 0
-  };
+    };
+  }
+
+  console.log(JSON.parse(localStorage.getItem('score')));
 
 
   function playGame (playerMove){
@@ -79,6 +86,8 @@
     } else if(result === 'Tie') {
       score.Ties += 1;
     }
+
+    localStorage.setItem('score', JSON.stringify(score));
 
 
     alert(`You picked ${playerMove}. Computer picked ${computerMove}. You ${result}
