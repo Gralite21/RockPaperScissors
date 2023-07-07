@@ -7,7 +7,7 @@
   <p>Rock Paper Scissors</p>
 
   <button onclick="
-    playGame('Rock');
+    playGame('Rock');                      // runs function with the playerMove Rock
   ">Rock</button>
 
   <button onclick="
@@ -19,12 +19,12 @@
   ">Scissors</button>
 
   <script>
-    function playGame (playerMove){
-      const computerMove = pickComputerMove();
-      let result = '';
+    function playGame (playerMove){                                       // Created the function playGame with the parameter playerMove( will be used in the following if statement) to organize my code
+      const computerMove = pickComputerMove();                          //  Created a variable with a function to organize the computerMove separately so the code will not be messy and hard to understand
+      let result = '';                                                   // empty value ... will be decided in the following if statements
 
-      if (playerMove === 'Scissors'){
-        if(computerMove==='Rock'){
+      if (playerMove === 'Scissors'){                      // first if statement based by the Parameter playerMove ( button clicked by the Player)
+        if(computerMove==='Rock'){                         // second if statement gets the fitting result based on the computerMove value and playerMove( value was decided in a different function)
           result = 'Lose';
         }
         else if (computerMove==='Paper'){
@@ -58,12 +58,10 @@
           }
         }
 
-      alert(`You picked ${playerMove}.Computer picked ${computerMove}.You ${result}`);
+      alert(`You picked ${playerMove}.Computer picked ${computerMove}.You ${result}`);         // Shows the final result to the Player... move by the computer, player Move and final result
     }
 
-    /*let computerMove = ''; */ //Can also be put up here
-
-    function pickComputerMove(){
+    function pickComputerMove(){                                       // function for the value of the computerMove variable
       const randomNumber = (Math.random());
 
       let computerMove = ''
@@ -78,7 +76,7 @@
       {computerMove = 'Scissors';
       }
 
-      return computerMove;
+      return computerMove;                                     // returns  the computerMove value, so it can be used in the function playGame
     }
   </script>
 </body>

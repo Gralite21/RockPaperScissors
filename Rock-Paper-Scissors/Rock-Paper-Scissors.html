@@ -9,12 +9,12 @@
   <p>Rock Paper Scissors</p>
 
 
-  <button onclick="
-    const randomNumber = (Math.random());
+  <button onclick="                                     // following code will be run by clicking the button Rock which displays the move of the Player
+    const randomNumber = (Math.random());                        // Created a variable with a random number to use in the following to randomize the computerMove
 
-    let computerMove = '';
+    let computerMove = '';                                      // created a variable computerMove without a value, cause the value will be picked in the following if statement
 
-    if (randomNumber >=0 && randomNumber <1/3){
+    if (randomNumber >=0 && randomNumber <1/3){                      // used an if statement to choose which part/numbers of Math.random will be which computerMove
         computerMove = 'Rock';
     }
     else if (randomNumber >=1/3 && randomNumber <2/3){
@@ -24,9 +24,9 @@
     {computerMove = 'Scissors';
     }
 
-    let result = '';
+    let result = '';                                 // created the variable result without a value, cause the value will be picked in the following if statement
 
-    if(computerMove==='Rock'){
+    if(computerMove==='Rock'){                      // if statement to pick the result in the played Game between Player and computerMove
         result = 'Tie';
     }
     else if (computerMove==='Paper'){
@@ -35,7 +35,7 @@
     else if (computerMove==='Scissors'){
         result = 'Win';
     }
-    alert(`You picked Rock. Computer picked ${computerMove}. You ${result}`);
+    alert(`You picked Rock. Computer picked ${computerMove}. You ${result}`);               // shows the final result to the Player.... What computer picked, what he picked and the final result
 
     ">Rock</button>
 

@@ -22,14 +22,14 @@
     score.Wins = 0 ;
     score.Losses = 0 ;
     score.Ties = 0 ;
-    localStorage.removeItem('score');
+    localStorage.removeItem('score');                             // Resets the localStorage ==> Score
     alert('Score has been reset');
   ">Reset Score</button>
 
 <script>
-  let score =
-    JSON.parse(localStorage.getItem('score'));
-  if (score===null){
+  let score =                                             // score value
+    JSON.parse(localStorage.getItem('score'));            // gets the score value out the storage... so it will be
+  if (score===null){                                     // When score doesnt have a value (null) we give score a default value
     score= {
     Wins : 0,
     Losses: 0,
@@ -37,7 +37,7 @@
     };
   }
 
-  console.log(JSON.parse(localStorage.getItem('score')));
+  console.log(JSON.parse(localStorage.getItem('score')));           // shows the permanently score in the Console
 
 
   function playGame (playerMove){
@@ -79,7 +79,7 @@
       }
     }
 
-    if (result === 'Win'){
+    if (result === 'Win'){                            // score update
       score.Wins += 1 ;
     } else if (result === 'Lose'){
       score.Losses += 1;
@@ -87,11 +87,11 @@
       score.Ties += 1;
     }
 
-    localStorage.setItem('score', JSON.stringify(score));
+    localStorage.setItem('score', JSON.stringify(score));                        // saves the score value into a string
 
 
     alert(`You picked ${playerMove}. Computer picked ${computerMove}. You ${result}
-Wins: ${score.Wins}  Losses: ${score.Losses}  Ties:${score.Ties}`);
+Wins: ${score.Wins}  Losses: ${score.Losses}  Ties:${score.Ties}`);                        // Shows the all-time score by the Player
   }
 
   /*let computerMove = ''; */ //Can also be put up here
